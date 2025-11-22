@@ -1,43 +1,45 @@
-# Ex11 Tree Representation and Traversal
+# Ex11 Convert HashSet to ArrayList in Java
+
 ## DATE:
+21.11.2025  
+
 ## AIM:
-To write a C function to perform post order traversal of a binary tree.
+To convert a collection of distinct integers stored in a HashSet into an ArrayList and display its contents.
 
 ## Algorithm
-1. Start the program.
-2. Define a function display_postorder() that takes a pointer to the root node of the tree.
-3. Check if the current node (root_node) is not null.
-4. Recursively call display_postorder() for the left child of the current node.
-5. Recursively call display_postorder() for the right child of the current node.
-6. After visiting both children, print the value of the current node.
-7. End the program.
+1. Start the program.  
+2. Create a `HashSet` and add distinct integer elements to it.  
+3. Use the `ArrayList` constructor to convert the `HashSet` into an `ArrayList`.  
+4. Display the elements of both the `HashSet` and the `ArrayList`.  
+5. Stop the program.  
 
 ## Program:
-```
+```java
 /*
-Program to perform post order traversal of a binary tree.
-DevelopedBy: PAVITHRA S
-Register Number: 212223230147
+Program to convert a collection of distinct integers stored in a HashSet into an ArrayList and display its contents.
+Developed by: Pavithra S
+RegisterNumber: 212223230147
 */
-struct node 
-{ 
-int value; 
-struct node *left_child, *right_child; 
-};*/ 
-void display_postorder(struct node *root_node) { 
-if(root_node) 
-{ 
-display_postorder(root_node->left_child); 
-display_postorder(root_node->right_child); 
-printf("%d\n",root_node->value); 
-} 
-} 
+import java.util.*;
+
+public class HashSetToArrayList {
+    public static void main(String[] args) {
+        HashSet<Integer> set = new HashSet<>();
+        set.add(10);
+        set.add(20);
+        set.add(30);
+        set.add(40);
+        set.add(50);
+
+        System.out.println("HashSet: " + set);
+
+        ArrayList<Integer> list = new ArrayList<>(set);
+        System.out.println("ArrayList: " + list);
+    }
+}
 ```
+## OUTPUT 
+<img width="946" height="94" alt="image" src="https://github.com/user-attachments/assets/647e442e-033d-4082-aea2-db80a1d86e16" />
 
-## Output:
-
-![image](https://github.com/user-attachments/assets/119ee178-17b2-429b-9953-113a702be632)
-
-
-## Result:
-Thus, the function to perform post order traversal of a binary tree is implemented successfully
+## RESULT
+The program successfully converts a collection of distinct integers stored in a HashSet into an ArrayList.
