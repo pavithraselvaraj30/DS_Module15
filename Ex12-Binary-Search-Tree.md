@@ -1,61 +1,42 @@
-# Ex12 Binary Search Tree
+# Ex12 Add Elements from an Array into a TreeSet
+
 ## DATE:
+21.11.2025  
+
 ## AIM:
-To write a C function to insert the elements in the binary search tree
+To write a Java program that adds elements from an array into a TreeSet and displays the elements in sorted order.
 
 ## Algorithm
-1. Start the program.
-2. Check if the current node is NULL; if true, create a new node with the given key.
-3. Allocate memory for the new node, set its key, and initialize its left and right children to NULL.
-4. If the current node is not NULL, compare the key with the current node's key.
-5. If key <= node->key, recursively insert the key into the left subtree and update the left child pointer.
-6. If key > node->key, recursively insert the key into the right subtree and update the right child pointer.
-7. Return the current node after the insertion.
-8. End the program.
+1. Start the program.  
+2. Initialize an array with integer elements.  
+3. Create an empty `TreeSet`.  
+4. Add all elements from the array into the `TreeSet`.  
+5. Display the elements of the `TreeSet` (which are automatically sorted).  
+6. Stop the program.  
 
 ## Program:
-```
+```java
 /*
-Program to insert the elements in the binary search tree
-DevelopedBy: PAVITHRA S
-Register Number: 212223230147
+Program that adds elements from an array into a TreeSet and displays the elements in sorted order.
+Developed by: Pavithra S
+RegisterNumber: 212223230147
 */
-struct node { 
-int key; 
-struct node *left, *right; 
-};*/ 
-struct node* insert(struct node* node, int key) 
-{ 
-if(node==NULL) 
-{ 
-struct node* node=(struct node*)malloc(sizeof(struct node)); 
-node->key=key; 
-node->left=NULL; 
-node->right=NULL; 
-return node; 
-} 
-else 
-{ 
-struct node* cur; 
-if(key<=node->key) 
-{ 
-cur=insert(node->left,key); 
-node->left=cur; 
-}   
-else 
-{ 
-cur=insert(node->right,key); 
-node->right=cur; 
-} 
-return node; 
-} 
+import java.util.*;
+
+public class ArrayToTreeSet {
+    public static void main(String[] args) {
+        Integer[] arr = {50, 20, 40, 10, 30};
+
+        TreeSet<Integer> set = new TreeSet<>(Arrays.asList(arr));
+
+        System.out.println("Array elements: " + Arrays.toString(arr));
+        System.out.println("TreeSet elements (sorted): " + set);
+    }
 }
+
 ```
+## OUTPUT 
+<img width="925" height="78" alt="image" src="https://github.com/user-attachments/assets/22d8f7fe-02ed-49a6-8a2f-9e819ed1eaaf" />
 
-## Output:
-
-![image](https://github.com/user-attachments/assets/315608a9-920c-4f48-9874-3401b43ee04b)
-
-
-## Result:
-Thus, the C function to insert the elements in the binary search tree is implemented successfully.
+## RESULT
+The program successfully adds elements from an array into a TreeSet and displays them in sorted order.
